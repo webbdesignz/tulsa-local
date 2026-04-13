@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tulsa Local — Free Local Business Directory | Tulsa, OK</title>
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+  <!-- SEO -->
+  <meta name="description" content="Discover the best local businesses in Tulsa, OK. Browse restaurants, dentists, auto shops, party rentals, and more. Free listings for Tulsa business owners.">
+  <meta name="keywords" content="Tulsa, OK, local business, directory, Tulsa Oklahoma">
+  <meta name="author" content="TulsaLocal">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tulsalocal.org/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TulsaLocal — Free Local Business Directory | Tulsa, OK">
+  <meta property="og:description" content="Discover the best local businesses in Tulsa, OK. Browse restaurants, dentists, auto shops, party rentals, and more. Free listings for local business owners.">
+  <meta property="og:url" content="https://tulsalocal.org/">
+  <meta property="og:image" content="https://tulsalocal.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:site_name" content="TulsaLocal">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TulsaLocal — Free Local Business Directory | Tulsa, OK">
+  <meta name="twitter:description" content="Discover the best local businesses in Tulsa, OK. Browse restaurants, dentists, auto shops, party rentals, and more.">
+  <meta name="twitter:image" content="https://tulsalocal.org/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --navy:#1B2B40;--orange:#D96B2D;--orange-light:#F4A05A;--cream:#FDF5E8;--cream-dark:#F0E6D0;--white:#FFFFFF;--text:#1B2B40;--text-muted:#6B7A8D;--border:#E2D9C8;--radius:14px; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--text); min-height: 100vh; }
+
+  /* ── NAV ── */
+  nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; text-decoration: none; }
+  .nav-logo span { color: var(--orange-light); }
+  .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-links a { color: rgba(253,245,232,0.65); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-cta { background: var(--orange) !important; color: white !important; padding: 0.45rem 1rem; border-radius: 6px; font-weight: 600 !important; }
+  .nav-cta:hover { background: var(--orange-light) !important; color: var(--navy) !important; }
+  .nav-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; z-index:200; }
+  .nav-hamburger span { display:block; width:22px; height:2px; background:var(--cream); border-radius:2px; transition:all 0.25s; }
+  .nav-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity:0; }
+  .nav-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  @media (max-width:768px) {
+    .nav-hamburger { display:flex; }
+    .nav-links { display:none; flex-direction:column; position:fixed; top:64px; left:0; right:0; background:var(--navy); padding:1.5rem 2rem 2rem; gap:1.25rem; border-top:1px solid rgba(255,255,255,0.1); box-shadow:0 8px 32px rgba(0,0,0,0.3); z-index:100; }
+    .nav-links.open { display:flex; }
+    .nav-links a { font-size:1rem; color:rgba(253,245,232,0.8); }
+    .nav-cta { text-align:center; }
+  }
+
+  /* ── HERO ── */
+  .hero { background: var(--navy); padding: 5rem 2rem 4.5rem; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle at 20% 80%,rgba(217,107,45,0.15) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(244,160,90,0.1) 0%,transparent 50%); }
+  .hero-content { position:relative; max-width:720px; margin:0 auto; }
+  .hero-eyebrow { display:inline-block; background:rgba(217,107,45,0.2); color:var(--orange-light); font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; padding:0.35rem 0.9rem; border-radius:100px; margin-bottom:1.25rem; border:1px solid rgba(244,160,90,0.25); }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2.4rem,6vw,4rem); font-weight:900; color:var(--cream); line-height:1.1; letter-spacing:-0.02em; margin-bottom:1.1rem; }
+  .hero h1 em { color:var(--orange-light); font-style:normal; }
+  .hero-sub { color:rgba(253,245,232,0.6); font-size:1.05rem; margin-bottom:2.25rem; line-height:1.6; }
+  .search-bar { display:flex; max-width:560px; margin:0 auto 1.25rem; background:var(--white); border-radius:12px; overflow:hidden; border:2px solid transparent; transition:border-color 0.2s; box-shadow:0 4px 24px rgba(0,0,0,0.18); }
+  .search-bar:focus-within { border-color:var(--orange-light); }
+  .search-icon { width:52px; display:flex; align-items:center; justify-content:center; color:var(--text-muted); flex-shrink:0; }
+  .search-icon svg { width:18px; height:18px; }
+  .search-bar input { flex:1; border:none; outline:none; font-size:0.97rem; font-family:'Plus Jakarta Sans',sans-serif; color:var(--text); background:transparent; padding:0.85rem 0; }
+  .search-bar input::placeholder { color:var(--text-muted); }
+  .search-btn { margin:6px; padding:0 1.4rem; background:var(--orange); color:white; border:none; border-radius:8px; font-size:0.88rem; font-weight:600; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif; transition:background 0.2s; white-space:nowrap; }
+  .search-btn:hover { background:#bf5e27; }
+  .hero-stats { display:flex; justify-content:center; gap:2rem; margin-top:2rem; }
+  .stat { text-align:center; }
+  .stat-num { display:block; font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:var(--orange-light); }
+  .stat-label { font-size:0.78rem; color:rgba(253,245,232,0.5); letter-spacing:0.05em; text-transform:uppercase; }
+
+  /* ── CATEGORIES ── */
+  .categories-section { padding:2.5rem 2rem 0; max-width:1200px; margin:0 auto; }
+  .section-title { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:var(--text); margin-bottom:1rem; }
+  .category-pills { display:flex; flex-wrap:wrap; gap:0.6rem; }
+  .pill { display:flex; align-items:center; gap:0.4rem; padding:0.55rem 1.1rem; background:var(--white); border:1.5px solid var(--border); border-radius:100px; font-size:0.85rem; font-weight:500; color:var(--text); cursor:pointer; transition:all 0.18s; text-decoration:none; }
+  .pill:hover, .pill.active { background:var(--navy); border-color:var(--navy); color:var(--cream); }
+
+  /* ── LISTINGS ── */
+  .listings-section { padding:2.5rem 2rem 4rem; max-width:1200px; margin:0 auto; }
+  .listings-meta { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; }
+  .listings-count { font-size:0.88rem; color:var(--text-muted); }
+  .business-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.25rem; }
+
+  /* ── CARD ── */
+  .biz-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s; display:flex; flex-direction:column; position:relative; }
+  .biz-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(27,43,64,0.1); border-color:var(--orange-light); }
+  .card-photo { position:relative; height:160px; overflow:hidden; background:#f0e6d0; }
+  .card-photo img { width:100%; height:100%; object-fit:cover; }
+  .card-photo-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:2.5rem; }
+  .card-photo-badge { position:absolute; top:8px; left:8px; }
+  .card-photo-rating { position:absolute; bottom:8px; right:8px; background:rgba(27,43,64,0.85); color:var(--cream); font-size:0.75rem; font-weight:600; padding:0.2rem 0.55rem; border-radius:6px; display:flex; align-items:center; gap:0.3rem; }
+  .card-link-overlay { position:absolute; inset:0; z-index:1; }
+  .card-body { padding:1.25rem 1.25rem 0.75rem; flex:1; position:relative; z-index:2; }
+  .card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:0.75rem; margin-bottom:0.7rem; }
+  .biz-name { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; color:var(--text); line-height:1.25; }
+  .chamber-badge { display:inline-flex; align-items:center; background:#EEF5FF; color:#1A5CA0; font-size:0.68rem; font-weight:600; padding:0.18rem 0.5rem; border-radius:4px; flex-shrink:0; border:1px solid #C0D8F4; white-space:nowrap; }
+  .category-badge { display:inline-flex; align-items:center; gap:0.3rem; padding:0.25rem 0.75rem; border-radius:100px; font-size:0.73rem; font-weight:600; letter-spacing:0.03em; margin-bottom:0.85rem; text-transform:uppercase; }
+  .card-details { display:flex; flex-direction:column; gap:0.45rem; }
+  .detail-row { display:flex; align-items:flex-start; gap:0.6rem; font-size:0.83rem; color:var(--text-muted); }
+  .detail-row svg { flex-shrink:0; margin-top:1px; }
+  .detail-row span { line-height:1.4; }
+  .detail-row a { color:inherit; text-decoration:none; }
+  .detail-row a:hover { color:var(--orange); }
+  .card-footer { padding:0.75rem 1.25rem; border-top:1px solid var(--cream-dark); display:flex; align-items:center; justify-content:space-between; position:relative; z-index:2; }
+  .view-btn { font-size:0.8rem; font-weight:600; color:var(--orange); text-decoration:none; }
+  .view-btn:hover { text-decoration:underline; }
+  .card-actions { display:flex; gap:0.5rem; }
+  .btn-icon { width:32px; height:32px; display:flex; align-items:center; justify-content:center; border:1.5px solid var(--border); border-radius:8px; background:transparent; cursor:pointer; color:var(--text-muted); transition:all 0.15s; z-index:3; position:relative; }
+  .btn-icon:hover { border-color:var(--orange); color:var(--orange); }
+  .btn-call { display:flex; align-items:center; gap:0.4rem; padding:0 0.85rem; height:32px; background:var(--navy); color:var(--cream); border:none; border-radius:8px; font-size:0.78rem; font-weight:600; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif; transition:background 0.15s; text-decoration:none; position:relative; z-index:3; }
+  .btn-call:hover { background:var(--orange); }
+
+  /* ── FEATURED ── */
+  .biz-card.featured { border-color: var(--orange); border-width: 2px; box-shadow: 0 4px 20px rgba(217,107,45,0.15); }
+  .biz-card.featured .card-body { background: linear-gradient(180deg, #fffbf7 0%, #ffffff 60%); }
+  .featured-ribbon { display: inline-flex; align-items: center; gap: 0.3rem; background: var(--orange); color: white; font-size: 0.68rem; font-weight: 700; padding: 0.22rem 0.65rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.06em; flex-shrink: 0; animation: pulse-featured 2.5s ease-in-out infinite; }
+  @keyframes pulse-featured { 0%,100% { box-shadow: 0 0 0 0 rgba(217,107,45,0.4); } 50% { box-shadow: 0 0 0 5px rgba(217,107,45,0); } }
+
+  /* ── RECENTLY ADDED ── */
+  .recent-section { background: var(--cream-dark); border-bottom: 1.5px solid var(--border); padding: 1.5rem 2rem; }
+  .recent-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .recent-label { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
+  .recent-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .recent-chip { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.8rem; background: var(--white); border: 1.5px solid var(--border); border-radius: 100px; font-size: 0.8rem; font-weight: 500; color: var(--text); text-decoration: none; transition: all 0.15s; }
+  .recent-chip:hover { border-color: var(--orange); color: var(--orange); }
+
+  /* ── INTRO ── */
+  .intro-section { background: var(--white); border-bottom: 1.5px solid var(--border); padding: 3.5rem 2rem; }
+  .intro-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .intro-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--text); line-height: 1.2; margin-bottom: 0.85rem; }
+  .intro-heading em { color: var(--orange); font-style: normal; }
+  .intro-text p { font-size: 0.97rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 1.5rem; }
+  .intro-stats { display: flex; gap: 2rem; }
+  .intro-stat { text-align: center; }
+  .intro-num { display: block; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--orange); }
+  .intro-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .intro-cards { display: grid; grid-template-columns: 1fr; gap: 0.85rem; }
+  .intro-card { background: var(--cream); border: 1.5px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; display: flex; gap: 1rem; align-items: flex-start; }
+  .intro-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+  .intro-card h3 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+  .intro-card p { font-size: 0.82rem; line-height: 1.55; color: var(--text-muted); margin: 0; }
+  @media (max-width: 768px) { .intro-inner { grid-template-columns: 1fr; gap: 2rem; } .intro-stats { gap: 1.25rem; } }
+
+  /* ── NEWSLETTER ── */
+  .newsletter-section { background: var(--navy); padding: 3rem 2rem; }
+  .newsletter-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+  .newsletter-heading { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: var(--cream); margin-bottom: 0.6rem; }
+  .newsletter-inner p { color: rgba(253,245,232,0.6); font-size: 0.93rem; margin-bottom: 1.5rem; }
+  .newsletter-form { display: flex; gap: 0.5rem; max-width: 440px; margin: 0 auto; }
+  .newsletter-input { flex: 1; padding: 0.75rem 1rem; border: 1.5px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); border-radius: 8px; color: var(--cream); font-size: 0.9rem; font-family: 'Plus Jakarta Sans', sans-serif; outline: none; }
+  .newsletter-input::placeholder { color: rgba(253,245,232,0.4); }
+  .newsletter-input:focus { border-color: var(--orange-light); }
+  .newsletter-btn { padding: 0.75rem 1.5rem; background: var(--orange); color: white; border: none; border-radius: 8px; font-size: 0.88rem; font-weight: 600; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; white-space: nowrap; transition: background 0.15s; }
+  .newsletter-btn:hover { background: var(--orange-light); color: var(--navy); }
+
+  /* ── FOOTER ── */
+  .site-footer { background: var(--navy); color: rgba(253,245,232,0.6); padding: 3.5rem 2rem 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(253,245,232,0.1); }
+  .footer-logo { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1.3rem; font-weight: 700; text-decoration: none; display: inline-block; margin-bottom: 0.85rem; }
+  .footer-logo span { color: var(--orange-light); }
+  .footer-tagline { font-size: 0.83rem; line-height: 1.7; color: rgba(253,245,232,0.5); margin-bottom: 1.25rem; max-width: 280px; }
+  .footer-col-title { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col ul li a { color: rgba(253,245,232,0.5); text-decoration: none; font-size: 0.83rem; transition: color 0.15s; }
+  .footer-col ul li a:hover { color: var(--orange-light); }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 1.25rem 0; font-size: 0.78rem; color: rgba(253,245,232,0.3); }
+  .footer-bottom strong { color: var(--orange-light); }
+  .footer-bottom a { color: rgba(253,245,232,0.4); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--orange-light); }
+  @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; } .footer-brand { grid-column: 1 / -1; } }
+  @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } .site-footer { padding: 2.5rem 1.25rem 0; } nav { padding: 0 1rem; } .business-grid { grid-template-columns: 1fr; } .hero { padding: 3rem 1.25rem; } .categories-section, .listings-section { padding-left: 1.25rem; padding-right: 1.25rem; } .hero-stats { gap: 1.2rem; } }
+
+  /* ── Hours ── */
+  .hours-open  { display:inline-block; background:#E5F7F0; color:#1A7A55; font-size:0.72rem; font-weight:700; padding:0.18rem 0.55rem; border-radius:5px; }
+  .hours-closed { display:inline-block; background:#FAEBEB; color:#991515; font-size:0.72rem; font-weight:700; padding:0.18rem 0.55rem; border-radius:5px; }
+
+  /* ── Back to top ── */
+  #backToTop { position:fixed; bottom:1.5rem; right:1.5rem; width:40px; height:40px; background:var(--orange); color:white; border:none; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(217,107,45,0.4); transition:background 0.15s, opacity 0.2s; z-index:50; }
+  #backToTop:hover { background:#bf5e27; }
+
+  /* ── Claim banner ── */
+  .claim-banner { background: var(--cream-dark); border-top: 1.5px solid var(--border); border-bottom: 1.5px solid var(--border); padding: 0.9rem 2rem; }
+  .claim-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .claim-text { font-size: 0.85rem; color: var(--text-muted); }
+  .claim-text strong { color: var(--text); font-weight: 600; margin-right: 0.3rem; }
+  .claim-btn { display: inline-flex; align-items: center; background: var(--orange); color: white; text-decoration: none; padding: 0.45rem 1rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600; white-space: nowrap; transition: background 0.15s; }
+  .claim-btn:hover { background: #bf5e27; }
+</style>
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "TulsaLocal",
+  "url": "https://tulsalocal.org/",
+  "description": "Free local business directory for Tulsa, OK",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://tulsalocal.org/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Tulsa<span>Local</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="neighborhoods/index.html">Neighborhoods</a>
+    <a href="best-of-tulsa.html">Best of Tulsa</a>
+    <a href="blog.html">News &amp; Guides</a>
+    <a href="about.html">About</a>
+    <a href="submit.html" class="nav-cta">+ Free Listing</a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Tulsa, Oklahoma</span>
+    <h1>Find Your Favorite <em>Local</em> Business</h1>
+    <p class="hero-sub">Supporting the shops, restaurants, and services that make Tulsa home.</p>
+    <div class="search-bar">
+      <div class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <input type="text" id="searchInput" placeholder="Search businesses..." oninput="applyFilters()">
+      <button class="search-btn" onclick="applyFilters()">Search</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" id="bizCount">50+</span><span class="stat-label">Businesses</span></div>
+      <div class="stat"><span class="stat-num">15</span><span class="stat-label">Categories</span></div>
+      <div class="stat"><span class="stat-num">40+</span><span class="stat-label">Neighborhoods</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENTLY ADDED -->
+<div class="recent-section">
+  <div class="recent-inner">
+    <span class="recent-label">Recently Added</span>
+    <div class="recent-chips">
+      <a href="businesses/bouncers-kingdom.html" class="recent-chip">🎉 Bouncers Kingdom</a>
+      <a href="businesses/jarvis-inc.html" class="recent-chip">🔧 Jarvis Inc.</a>
+      <a href="businesses/mahogany-prime-steakhouse.html" class="recent-chip">🍽 Mahogany Prime Steakhouse</a>
+      <a href="businesses/chimera-cafe.html" class="recent-chip">☕ Chimera Cafe</a>
+      <a href="businesses/tulsa-animal-welfare.html" class="recent-chip">🐾 Tulsa Animal Welfare</a>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="intro-inner">
+    <div class="intro-text">
+      <h2 class="intro-heading">Your <em>Tulsa</em> in One Place</h2>
+      <p>TulsaLocal makes it easy to find and support the businesses that make our community thrive. Every listing is verified, local, and completely free to claim.</p>
+      <div class="intro-stats">
+        <div class="intro-stat"><span class="intro-num">50+</span><span class="intro-label">Local Businesses</span></div>
+        <div class="intro-stat"><span class="intro-num">15</span><span class="intro-label">Categories</span></div>
+        <div class="intro-stat"><span class="intro-num">40+</span><span class="intro-label">Neighborhoods</span></div>
+      </div>
+    </div>
+    <div class="intro-cards">
+      <div class="intro-card"><div class="intro-icon">📍</div><div><h3>Hyperlocal</h3><p>Every business is based in or serves the Tulsa metro — no national chains drowning out local gems.</p></div></div>
+      <div class="intro-card"><div class="intro-icon">✓</div><div><h3>Verified</h3><p>Listings are sourced from local data and verified by business owners.</p></div></div>
+      <div class="intro-card"><div class="intro-icon">🆓</div><div><h3>Free Forever</h3><p>Adding or claiming your business listing is completely free — no credit card, no hidden fees, ever.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLAIM BANNER -->
+<div class="claim-banner">
+  <div class="claim-inner">
+    <p class="claim-text"><strong>Is your business listed?</strong> Claim your free listing and keep your info up to date.</p>
+    <a href="submit.html" class="claim-btn">Claim Your Listing →</a>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="categories-section">
+  <h2 class="section-title">Browse by Category</h2>
+  <div class="category-pills">
+    <a href="javascript:void(0)" class="pill active" onclick="filterCategory('all',this,event)">🗂 All</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('food',this,event)">🍽 Food &amp; Dining</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('party',this,event)">🎉 Party Rentals</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('health',this,event)">🏥 Health</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('medical',this,event)">🩺 Medical</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('services',this,event)">🔧 Services</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('auto',this,event)">🚗 Auto</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('beauty',this,event)">💅 Beauty</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('fitness',this,event)">🏋 Fitness</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('pet',this,event)">🐾 Pet Services</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('home',this,event)">🏡 Home &amp; Garden</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('retail',this,event)">🛍 Retail</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('education',this,event)">🎓 Education</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('financial',this,event)">💰 Financial</a>
+    <a href="javascript:void(0)" class="pill" onclick="filterCategory('construction',this,event)">🔨 Construction</a>
+  </div>
+</section>
+
+<!-- LISTINGS -->
+<section class="listings-section">
+  <div class="listings-meta">
+    <span class="listings-count" id="listingsCount">Showing 50 businesses</span>
+  </div>
+  <div class="business-grid" id="bizGrid">
+
+    <!-- FEATURED: Bouncers Kingdom -->
+    <div class="biz-card featured" data-category="party" data-name="Bouncers Kingdom" data-is-open="true">
+      <div class="card-photo"><img src="images/Bouncers Kingdom.jpg" alt="Bouncers Kingdom Tulsa OK" loading="lazy"><div class="card-photo-badge"><span class="featured-ribbon">⭐ FEATURED</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Bouncers Kingdom</div>
+        <span class="category-badge" style="background:#F3E8FB;color:#6B1899">🎉 Party Rentals</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Tulsa, OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>Bounce houses, water slides &amp; party rentals for Tulsa &amp; surrounding areas</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/bouncers-kingdom.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="https://bouncerskingdom.com" target="_blank" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Website</a></div>
+      </div>
+    </div>
+
+    <!-- FEATURED: Jarvis Inc. -->
+    <div class="biz-card featured" data-category="services" data-name="Jarvis Inc." data-is-open="true">
+      <div class="card-photo"><img src="images/jarvis.jpg" alt="Jarvis Inc Tulsa OK" loading="lazy"><div class="card-photo-badge"><span class="featured-ribbon">⭐ FEATURED</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Jarvis Inc.</div>
+        <span class="category-badge" style="background:#E5F0FA;color:#175CA0">🔧 Services</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Tulsa, OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>Local services serving the greater Tulsa area</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/jarvis-inc.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="businesses/jarvis-inc.html" class="btn-call">View →</a></div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PASTE tulsa_cards_raw.html CONTENT HERE
+         Replace this comment block with everything from tulsa_cards_raw.html
+         Keep the two FEATURED cards above this comment — do not delete them
+         ============================================================ -->
+    <div class="biz-card" data-category="food" data-name="Mahogany Prime Steakhouse" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FEF0E820">🍽</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Mahogany Prime Steakhouse</div>
+        <span class="category-badge" style="background:#FEF0E8;color:#B84A15">🍽 Food &amp; Dining</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>1517 S Utica Ave, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 392-0403</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/mahogany-prime-steakhouse.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19183920403" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Chimera Cafe -->
+    <div class="biz-card" data-category="food" data-name="Chimera Cafe" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FEF0E820">☕</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Chimera Cafe</div>
+        <span class="category-badge" style="background:#FEF0E8;color:#B84A15">🍽 Food &amp; Dining</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>3512 E Admiral Pl, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 599-0665</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/chimera-cafe.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19185990665" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Burn Co BBQ -->
+    <div class="biz-card" data-category="food" data-name="Burn Co Barbeque" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FEF0E820">🔥</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Burn Co Barbeque</div>
+        <span class="category-badge" style="background:#FEF0E8;color:#B84A15">🍽 Food &amp; Dining</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>1738 S Boston Ave, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 508-3997</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/burn-co-barbeque.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19185083997" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Queenie's Plus -->
+    <div class="biz-card" data-category="food" data-name="Queenie's Plus" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FEF0E820">🥞</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Queenie's Plus</div>
+        <span class="category-badge" style="background:#FEF0E8;color:#B84A15">🍽 Food &amp; Dining</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>324 E 3rd St, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 582-3338</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/queenies-plus.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19185823338" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- The Vault -->
+    <div class="biz-card" data-category="food" data-name="The Vault" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FEF0E820">🍸</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">The Vault</div>
+        <span class="category-badge" style="background:#FEF0E8;color:#B84A15">🍺 Bar &amp; Lounge</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>116 S Boston Ave, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 236-5001</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/the-vault.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19182365001" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Laffa Middle Eastern -->
+    <div class="biz-card" data-category="food" data-name="Laffa Middle Eastern Restaurant" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FEF0E820">🥙</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Laffa Middle Eastern Restaurant</div>
+        <span class="category-badge" style="background:#FEF0E8;color:#B84A15">🍽 Food &amp; Dining</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>3509 S Peoria Ave, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 745-0111</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/laffa-middle-eastern.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19187450111" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Dwelling Spaces -->
+    <div class="biz-card" data-category="retail" data-name="Dwelling Spaces" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#EEEAF820">🛍</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Dwelling Spaces</div>
+        <span class="category-badge" style="background:#EEEAF8;color:#4A3D99">🛍 Retail</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>1717 Utica Square, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 609-1899</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/dwelling-spaces.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19186091899" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- The Dog House -->
+    <div class="biz-card" data-category="pet" data-name="The Dog House Grooming Boutique" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#E8F5E920">🐾</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">The Dog House Grooming Boutique</div>
+        <span class="category-badge" style="background:#E8F5E9;color:#2E7D32">🐾 Pet Services</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>4727 S Mingo Rd, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 627-8040</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/dog-house-grooming.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19186278040" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Tulsa Animal Welfare -->
+    <div class="biz-card" data-category="pet" data-name="Tulsa Animal Welfare" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#E8F5E920">🐕</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Tulsa Animal Welfare</div>
+        <span class="category-badge" style="background:#E8F5E9;color:#2E7D32">🐾 Pet Services</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>2910 N Martin Luther King Jr Blvd, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 596-9025</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/tulsa-animal-welfare.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19185969025" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Tulsa Ballet -->
+    <div class="biz-card" data-category="education" data-name="Tulsa Ballet" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#E8EAF620">🎓</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Tulsa Ballet</div>
+        <span class="category-badge" style="background:#E8EAF6;color:#3949AB">🎓 Education</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>1212 E 45th Pl N, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 749-6006</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/tulsa-ballet.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19187496006" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Tulsa Dental Collective -->
+    <div class="biz-card" data-category="health" data-name="Tulsa Dental Collective" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#E5F7F020">🏥</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Tulsa Dental Collective</div>
+        <span class="category-badge" style="background:#E5F7F0;color:#1A7A55">🏥 Health</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>7929 S Sheridan Rd, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 492-3600</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/tulsa-dental-collective.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19184923600" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Utica Park Clinic -->
+    <div class="biz-card" data-category="medical" data-name="Utica Park Clinic" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#E5F7F020">🩺</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Utica Park Clinic</div>
+        <span class="category-badge" style="background:#E5F7F0;color:#1A7A55">🩺 Medical</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>3838 S 103rd E Ave, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 392-0200</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/utica-park-clinic.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19183920200" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Merritt's Bakery -->
+    <div class="biz-card" data-category="food" data-name="Merritt's Bakery" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FEF0E820">🎂</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Merritt's Bakery</div>
+        <span class="category-badge" style="background:#FEF0E8;color:#B84A15">🍽 Food &amp; Dining</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>4821 E 91st St, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 745-2553</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/merritts-bakery.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19187452553" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Brown's Shoe Fit -->
+    <div class="biz-card" data-category="retail" data-name="Brown's Shoe Fit Co." data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#EEEAF820">👟</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Brown's Shoe Fit Co.</div>
+        <span class="category-badge" style="background:#EEEAF8;color:#4A3D99">🛍 Retail</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>6932 S Lewis Ave, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 492-6001</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/browns-shoe-fit.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19184926001" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Rendezvous Event Center -->
+    <div class="biz-card" data-category="services" data-name="Rendezvous Event Center" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#E5F0FA20">🏛</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Rendezvous Event Center</div>
+        <span class="category-badge" style="background:#E5F0FA;color:#175CA0">🔧 Services</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>6738 E 41st St, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 663-5000</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/rendezvous-event-center.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19186635000" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Atlas Fitness -->
+    <div class="biz-card" data-category="fitness" data-name="Atlas Fitness" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FDF1E020">🏋</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Atlas Fitness</div>
+        <span class="category-badge" style="background:#FDF1E0;color:#995A05">🏋 Fitness</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>4616 S Harvard Ave, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 742-5858</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/atlas-fitness.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19187425858" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Visions Salon -->
+    <div class="biz-card" data-category="beauty" data-name="Visions Salon" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FAE8F320">💅</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Visions Salon</div>
+        <span class="category-badge" style="background:#FAE8F3;color:#991555">💅 Beauty</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>3405 S Peoria Ave, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 745-1113</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/visions-salon.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19187451113" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- OK Auto Glass -->
+    <div class="biz-card" data-category="auto" data-name="Oklahoma Auto Glass" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FAEBEB20">🚗</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Oklahoma Auto Glass</div>
+        <span class="category-badge" style="background:#FAEBEB;color:#991515">🚗 Auto</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>4930 E 31st St, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 835-2442</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/oklahoma-auto-glass.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19188352442" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- McNellie's -->
+    <div class="biz-card" data-category="food" data-name="McNellie's Public House" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FEF0E820">🍺</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">McNellie's Public House</div>
+        <span class="category-badge" style="background:#FEF0E8;color:#B84A15">🍺 Bar &amp; Lounge</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>409 E 1st St, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 382-7468</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/mcnellies-public-house.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19183827468" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- State Farm Tulsa -->
+    <div class="biz-card" data-category="financial" data-name="State Farm Insurance Tulsa" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#E8F5E920">💰</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">State Farm — Tulsa Agent</div>
+        <span class="category-badge" style="background:#E8F5E9;color:#2E7D32">💰 Financial</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Tulsa, OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>Multiple locations across Tulsa</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/state-farm-tulsa.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="businesses/state-farm-tulsa.html" class="btn-call">View →</a></div>
+      </div>
+    </div>
+
+    <!-- Lorton's Fine Jewelry -->
+    <div class="biz-card" data-category="retail" data-name="Lorton's Fine Jewelry" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#EEEAF820">💎</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Lorton's Fine Jewelry</div>
+        <span class="category-badge" style="background:#EEEAF8;color:#4A3D99">🛍 Retail</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>6717 S Mingo Rd, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 494-1400</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/lortons-fine-jewelry.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19184941400" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Tulsa Roofing -->
+    <div class="biz-card" data-category="construction" data-name="Tulsa Roofing" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#FBE9E720">🔨</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Tulsa Roofing</div>
+        <span class="category-badge" style="background:#FBE9E7;color:#BF360C">🔨 Construction</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Tulsa, OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 610-0100</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/tulsa-roofing.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19186100100" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+    <!-- Green Circle Garden Center -->
+    <div class="biz-card" data-category="home" data-name="Green Circle Garden Center" data-is-open="true">
+      <div class="card-photo"><div class="card-photo-placeholder" style="background:#F1F8E920">🏡</div><div class="card-photo-badge"><span class="chamber-badge">&#10003; Verified</span></div></div>
+      <div class="card-body">
+        <div class="biz-name">Green Circle Garden Center</div>
+        <span class="category-badge" style="background:#F1F8E9;color:#558B2F">🏡 Home &amp; Garden</span>
+        <div class="card-details">
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span>7301 E 91st St, Tulsa OK</span></div>
+          <div class="detail-row"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span>(918) 299-0700</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="businesses/green-circle-garden.html" class="view-btn">View Listing &#8594;</a>
+        <div class="card-actions"><a href="tel:+19182990700" class="btn-call"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .14h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg> Call</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="newsletter-inner">
+    <h2 class="newsletter-heading">Stay in the Loop</h2>
+    <p>Get new Tulsa business listings, local news, and community updates delivered to your inbox. No spam, ever.</p>
+    <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+      <input type="email" placeholder="your@email.com" required class="newsletter-input" id="newsletterEmail">
+      <button type="submit" class="newsletter-btn">Subscribe →</button>
+    </form>
+    <p id="newsletterMsg" style="display:none;color:#F4A05A;font-size:0.82rem;margin-top:0.75rem;">✓ Thanks! We'll be in touch soon.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">Tulsa<span>Local</span></a>
+      <p class="footer-tagline">The free local business directory for Tulsa, OK — connecting residents with the shops, restaurants, and services that make our community home.</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Explore</h4>
+      <ul>
+        <li><a href="index.html">Browse All Businesses</a></li>
+        <li><a href="index.html#bizGrid">Food &amp; Dining</a></li>
+        <li><a href="index.html#bizGrid">Health &amp; Medical</a></li>
+        <li><a href="index.html#bizGrid">Party Rentals</a></li>
+        <li><a href="index.html#bizGrid">Auto &amp; Services</a></li>
+        <li><a href="neighborhoods/index.html">Neighborhoods</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Business Owners</h4>
+      <ul>
+        <li><a href="submit.html">Add Free Listing</a></li>
+        <li><a href="submit.html">Update Your Listing</a></li>
+        <li><a href="advertise.html">Advertise With Us</a></li>
+        <li><a href="https://www.tulsachamber.com" target="_blank">Tulsa Chamber</a></li>
+        <li><a href="https://www.cityoftulsa.org/business/" target="_blank">City of Tulsa</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Company</h4>
+      <ul>
+        <li><a href="best-of-tulsa.html">Best of Tulsa</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <strong>TulsaLocal</strong> — Tulsa, OK &nbsp;·&nbsp; Directory managed by <a href="https://webbdesignz.com" target="_blank">WebbDesignz</a> — Tulsa Local SEO &nbsp;·&nbsp; <a href="sitemap.xml" target="_blank">Sitemap</a></p>
+  </div>
+</footer>
+
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<script>
+  let activeCategory = 'all';
+
+  function filterCategory(cat, el, evt) {
+    if (evt) { evt.preventDefault(); evt.stopPropagation(); }
+    activeCategory = cat;
+    document.querySelectorAll('.pill').forEach(function(p) { p.classList.remove('active'); });
+    el.classList.add('active');
+    applyFilters();
+  }
+
+  function applyFilters() {
+    var searchEl = document.getElementById('searchInput');
+    var query = searchEl ? searchEl.value.toLowerCase() : '';
+    var cards = document.querySelectorAll('.biz-card');
+    var visible = 0;
+    cards.forEach(function(card) {
+      var cat = card.getAttribute('data-category') || '';
+      var name = (card.getAttribute('data-name') || '').toLowerCase();
+      var catMatch = activeCategory === 'all' || cat === activeCategory;
+      var nameMatch = name.indexOf(query) !== -1;
+      var show = catMatch && nameMatch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    var countEl = document.getElementById('listingsCount');
+    if (countEl) countEl.textContent = 'Showing ' + visible + ' business' + (visible !== 1 ? 'es' : '');
+  }
+
+  function toggleMenu() {
+    const links = document.getElementById('navLinks');
+    const burger = document.querySelector('.nav-hamburger');
+    links.classList.toggle('open');
+    burger.classList.toggle('open');
+  }
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+      document.querySelector('.nav-hamburger').classList.remove('open');
+    });
+  });
+
+  function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    document.getElementById('newsletterEmail').value = '';
+    document.getElementById('newsletterMsg').style.display = 'block';
+    setTimeout(() => { document.getElementById('newsletterMsg').style.display = 'none'; }, 4000);
+  }
+</script>
+</body>
+</html>
