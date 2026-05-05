@@ -1,0 +1,5 @@
+# Netlify redirects — catch broken listing links
+/businesses/*  /  302
+/best-of-tulsa.html  /  302
+/blog.html  /  302
+/advertise.html  /contact.html  302
